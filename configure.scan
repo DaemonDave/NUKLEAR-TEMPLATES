@@ -1,0 +1,99 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.71])
+AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_CONFIG_SRCDIR([nuklear.h])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_CC
+
+# Checks for libraries.
+# FIXME: Replace 'main' with a function in '-lGL':
+AC_CHECK_LIB([GL], [main])
+# FIXME: Replace 'main' with a function in '-lGLESv2':
+AC_CHECK_LIB([GLESv2], [main])
+# FIXME: Replace 'main' with a function in '-lGLEW':
+AC_CHECK_LIB([GLEW], [main])
+# FIXME: Replace 'main' with a function in '-lGLEW32':
+AC_CHECK_LIB([GLEW32], [main])
+# FIXME: Replace 'main' with a function in '-lGLU':
+AC_CHECK_LIB([GLU], [main])
+# FIXME: Replace 'main' with a function in '-lGLU32':
+AC_CHECK_LIB([GLU32], [main])
+# FIXME: Replace 'main' with a function in '-lSDL2':
+AC_CHECK_LIB([SDL2], [main])
+# FIXME: Replace 'main' with a function in '-lSDL2main':
+AC_CHECK_LIB([SDL2main], [main])
+# FIXME: Replace 'main' with a function in '-lX11':
+AC_CHECK_LIB([X11], [main])
+# FIXME: Replace 'main' with a function in '-lXext':
+AC_CHECK_LIB([Xext], [main])
+# FIXME: Replace 'main' with a function in '-lXrandr':
+AC_CHECK_LIB([Xrandr], [main])
+# FIXME: Replace 'main' with a function in '-lallegro':
+AC_CHECK_LIB([allegro], [main])
+# FIXME: Replace 'main' with a function in '-lallegro_font':
+AC_CHECK_LIB([allegro_font], [main])
+# FIXME: Replace 'main' with a function in '-lallegro_image':
+AC_CHECK_LIB([allegro_image], [main])
+# FIXME: Replace 'main' with a function in '-lallegro_main':
+AC_CHECK_LIB([allegro_main], [main])
+# FIXME: Replace 'main' with a function in '-lallegro_primitives':
+AC_CHECK_LIB([allegro_primitives], [main])
+# FIXME: Replace 'main' with a function in '-lallegro_ttf':
+AC_CHECK_LIB([allegro_ttf], [main])
+# FIXME: Replace 'main' with a function in '-lgdi32':
+AC_CHECK_LIB([gdi32], [main])
+# FIXME: Replace 'main' with a function in '-lglfw':
+AC_CHECK_LIB([glfw], [main])
+# FIXME: Replace 'main' with a function in '-lglfw3':
+AC_CHECK_LIB([glfw3], [main])
+# FIXME: Replace 'main' with a function in '-lm':
+AC_CHECK_LIB([m], [main])
+# FIXME: Replace 'main' with a function in '-lmingw32':
+AC_CHECK_LIB([mingw32], [main])
+# FIXME: Replace 'main' with a function in '-lopengl32':
+AC_CHECK_LIB([opengl32], [main])
+# FIXME: Replace 'main' with a function in '-ludev':
+AC_CHECK_LIB([udev], [main])
+# FIXME: Replace 'main' with a function in '-lwinmm':
+AC_CHECK_LIB([winmm], [main])
+
+# Checks for header files.
+AC_PATH_X
+AC_CHECK_HEADERS([malloc.h stdint.h sys/time.h unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_CHECK_HEADER_STDBOOL
+AC_C_INLINE
+AC_TYPE_INT16_T
+AC_TYPE_INT32_T
+AC_TYPE_SIZE_T
+AC_TYPE_UINT16_T
+AC_TYPE_UINT32_T
+
+# Checks for library functions.
+AC_FUNC_MALLOC
+AC_FUNC_REALLOC
+AC_CHECK_FUNCS([gettimeofday memset pow setlocale sqrt strchr strstr strtol])
+
+AC_CONFIG_FILES([demo/allegro5/Makefile
+                 demo/glfw_opengl2/Makefile
+                 demo/glfw_opengl3/Makefile
+                 demo/glfw_opengl4/Makefile
+                 demo/sdl_opengl2/Makefile
+                 demo/sdl_opengl3/Makefile
+                 demo/sdl_opengles2/Makefile
+                 demo/sfml_opengl2/Makefile
+                 demo/sfml_opengl3/Makefile
+                 demo/x11/Makefile
+                 demo/x11_opengl2/Makefile
+                 demo/x11_opengl3/Makefile
+                 demo/x11_rawfb/Makefile
+                 demo/x11_xft/Makefile
+                 doc/Makefile
+                 example/Makefile])
+AC_OUTPUT
